@@ -192,7 +192,7 @@ export default function TasksManagement() {
                             ⋮
                           </button>
                           {activeDropdown === task._id && (
-                            <div className="absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white  ring-opacity-5 z-50">
+                            <div className="fixed z-50 mt-2 w-32 rounded-md shadow-lg bg-white  ring-opacity-5">
                               <div className="py-1" role="menu">
                                 <button
                                   className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left transition-colors duration-200"
