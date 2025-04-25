@@ -56,12 +56,12 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-tr from-blue-400 to-indigo-600">
+    <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-b sm:bg-gradient-to-br from-[#FBFBFD] via-[#5B6EB6] to-[#47459B]">
       {/* Left side with logo and tagline */}
       <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-center md:justify-start">
-            <img className="w-48 md:w-auto" src="Icon.png" alt="Logo" />
+            <img className=" w-auto h-[68.55px] lg:w-auto lg:h-[120px] " src="Icon.png" alt="Logo" />
           </div>
         </div>
 
@@ -89,7 +89,7 @@ export default function SignUpPage() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="example@lemonpay.com" 
-                className="w-full text-white outline-none border p-3 rounded-md" 
+                className="w-full text-white outline-none border p-3 rounded-md bg-white/30 backdrop-blur-sm" 
                 required
               />
             </div>
@@ -102,7 +102,7 @@ export default function SignUpPage() {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Min 8 characters" 
-                className="w-full text-white outline-none p-3 border rounded-md" 
+                className="w-full text-white outline-none p-3 border rounded-md bg-white/30 backdrop-blur-sm" 
                 required
                 minLength={8}
               />
@@ -116,7 +116,7 @@ export default function SignUpPage() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 placeholder="Min 8 characters" 
-                className="w-full text-white outline-none p-3 border rounded-md" 
+                className="w-full text-white outline-none p-3 border rounded-md bg-white/30 backdrop-blur-sm" 
                 required
                 minLength={8}
               />
@@ -144,6 +144,25 @@ export default function SignUpPage() {
           </form>
         </div>
       </div>
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      {/* Bottom left ellipse */}
+      <div
+        className="absolute bottom-0 left-0 w-72 h-72  md:w-64 md:h-64   rounded-full bg-purple-300/20 -translate-x-1/3 translate-y-1/3"
+        aria-hidden="true"
+      ></div>
+
+      {/* Bottom right ellipse */}
+      <div
+        className="absolute md:w-[300px] md:h-[400px] h-[400px] w-[400px]  top-[350px] left-[150px]  md:top-[530px] md:left-[400px] rounded-full bg-purple-300/20 translate-x-1/3"
+        aria-hidden="true"
+      ></div>
+
+      {/* Top right ellipse */}
+      <div
+        className="absolute w-[312px] h-[303px]   top-[-91px] left-[1341px] rounded-full bg-gray-200/20 translate-x-1/4 -translate-y-1/4"
+        aria-hidden="true"
+      ></div>
+    </div>
     </div>
   );
 }

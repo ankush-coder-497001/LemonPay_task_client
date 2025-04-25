@@ -67,17 +67,10 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-white/95 rounded-lg shadow-xl w-full max-w-md mx-4 transform transition-all">
         <div className="p-6">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-center items-center mb-6">
             <h2 className="text-xl font-semibold text-gray-800">
               {editingTask ? "Edit Task" : "Add Task"}
             </h2>
-            <button
-              onClick={handleClose}
-              className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
-              disabled={loading}
-            >
-              ✕
-            </button>
           </div>
 
           {error && (
@@ -88,9 +81,6 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="taskName" className="block text-sm font-medium text-gray-700 mb-1">
-                Task Name
-              </label>
               <input 
                 type="text" 
                 id="taskName"
@@ -98,16 +88,14 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
                 value={formData.taskName}
                 onChange={handleChange}
                 placeholder="Enter Task Name" 
-                className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                className="w-full p-3 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
                 required
                 disabled={loading}
               />
             </div>
 
             <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
-                Description
-              </label>
+
               <input 
                 type="text" 
                 id="description"
@@ -115,23 +103,20 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Description" 
-                className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                className="w-full p-3 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
                 required
                 disabled={loading}
               />
             </div>
 
             <div>
-              <label htmlFor="dueDate" className="block text-sm font-medium text-gray-700 mb-1">
-                Due Date & Time
-              </label>
               <input 
                 type="datetime-local" 
                 id="dueDate"
                 name="dueDate"
                 value={formData.dueDate}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
+                className="w-full p-3 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" 
                 required
                 disabled={loading}
               />
@@ -140,7 +125,7 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
             <div className="flex flex-col items-center space-y-3 pt-4">
               <button 
                 type="submit"
-                className="w-full bg-blue-700 text-white py-3 px-8 rounded-full cursor-pointer hover:bg-blue-800 disabled:opacity-50 transition-all duration-200 shadow-md"
+                className="w-40 bg-blue-700 text-white py-3 px-8 rounded-full cursor-pointer hover:bg-blue-800 disabled:opacity-50 transition-all duration-200 shadow-md"
                 disabled={loading}
               >
                 {loading ? (
@@ -152,7 +137,7 @@ export default function AddTask({ setShowAddTask, onTaskAdded, editingTask, onTa
                     {editingTask ? "Updating..." : "Saving..."}
                   </span>
                 ) : (
-                  editingTask ? "Update Task" : "Save Task"
+                  editingTask ? "Update" : "Save"
                 )}
               </button>
 
